@@ -60,7 +60,8 @@ button {
     color: var(--crust);
     padding: 0.5em 1em;
     border-radius: 100vh;
-    border: none
+    border: none;
+    cursor: pointer;
 }
 
 /* Header Styling */
@@ -118,22 +119,55 @@ nav li a:hover {
 
 /* Featured Skills Styling */
 .featuredSkills {
-    padding: 0.5em 1em;
+    padding: 2.5em 1em;
 }
 
 .featuredSkillsWrapper {
     display: grid;
     gap: 1em;
-    grid-template-columns: repeat(auto-fit, minMax(300px, 1fr));
-    padding: 1em 0.5em;
+    grid-template-columns: repeat(auto-fit, minMax(360px, 1fr));
+    padding: 2.5em 0.5em;
 }
 
 .skillCard {
     display: grid;
     background-color: var(--surface0);
-    gap: 0.5em;
+    gap: 1em 0.5em;
     padding: 1em;
     border-radius: 25px;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "course course course"
+        "author authToPrice price"
+        "description description description"
+        "bookNow bookNow bookNow";
+}
+
+.course { grid-area: course; }
+.author { grid-area: author; }
+.description { grid-area: description; }
+
+.bookNow {
+    grid-area: bookNow;
+    margin: auto;
+}
+
+.bookNow h2 { font-weight: normal;}
+
+.authorToPrice {
+    grid-area: authToPrice;
+    margin-left: 0.5em;
+    border: dashed 1.5px white;
+}
+
+.price {
+    grid-area: price;
+    border: solid 3px var(--mauve);
+    border-radius: 25px;
+    corner-shape: scoop;
+    text-align: center;
+    padding: 0.25em 1em;
 }
 
 /* Footer */
